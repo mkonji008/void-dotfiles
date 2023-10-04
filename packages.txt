@@ -1,3 +1,8 @@
+nvim
+ranger
+curl
+wget
+
 NetworkManager
 network-manager-applet
 network-manager-openvpn
@@ -73,9 +78,7 @@ fonts-nanum-ttf
 fonts-nanum-ttf-extra
 mkfontscale
 nerd-fonts
-
 grip
 fzf
 ripgrep
 gcc
-
