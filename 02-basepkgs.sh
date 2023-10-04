@@ -25,7 +25,7 @@ if [ ! -f packages.txt ]; then
 fi
 
 while read -r package; do
-	xbps-install -Suy "$package"
+	doas xbps-install -Suy "$package"
 done <packages.txt
 
 # install oh-my-bash and wait, will resume when completed
