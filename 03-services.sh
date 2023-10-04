@@ -40,7 +40,7 @@ check_service "elogind"
 check_service "dbus"
 
 # problem child service / no logic
-doas xbps-install -Sy lightdm lightdm-gtk3-greeter
-doas ln -s /etc/sv/lightdm/ /var/service/
+sudo xbps-install -Sy lightdm lightdm-gtk3-greeter
+sudo ln -s /etc/sv/lightdm/ /var/service/
 
 echo "Services check and setup completed."

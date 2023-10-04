@@ -1,8 +1,7 @@
-nvim
+neovim
 ranger
 curl
 wget
-
 NetworkManager
 network-manager-applet
 network-manager-openvpn
