@@ -2,8 +2,11 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+# polkit service
+exec --no-startup-id /usr/libexec/polkit-mate-authentication-agent-1 & 
+
 # enable input remapper service
-exec --no-startup-id input-remapper-service -d &
+#exec --no-startup-id input-remapper-service -d &
 set $mod Mod4
 
 # borders
@@ -23,41 +26,41 @@ font pango:FuraMono Nerd Font Bold 9
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
-exec --no-startup-id dex --autostart --environment i3
+exec --no-startup-id dex --autostart --environment i3 &
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork &
 
 # network jazz
-exec --no-startup-id nm-applet
+exec --no-startup-id nm-applet &
 
 # power-manager
-exec --no-startup-id xfce4-power-manager
+#exec --no-startup-id xfce4-power-manager
 
 # everybody loves clear things
-exec --no-startup-id picom
+exec --no-startup-id picom &
 
 # wallpaper
 exec --no-startup-id nitrogen --restore &
 
 # clipboard manager
-exec --no-startup-id copyq
+exec --no-startup-id copyq &
 bindsym $mod+c exec copyq show
 for_window [instance="^copyq$" class="^copyq$"] border pixel 1, floating enable
 
 # language support
-exec --no-startup-id ibus-daemon -drxR 
+exec --no-startup-id ibus-daemon -drxR &
 
 # kdeconnect
-exec --no-startup-id kdeconnect-indicator
+exec --no-startup-id kdeconnect-indicator &
 
 # screenshot
-exec --no-startup-id flameshot
+exec --no-startup-id flameshot &
 bindsym Print exec --no-startup-id flameshot gui
 
 # google drive
-exec --no-startup-id google-drive-ocamlfuse ./googleDriveRemoteDir/
+#exec --no-startup-id google-drive-ocamlfuse ./googleDriveRemoteDir/ &
 
 # Use pactl to adjust volume in PulseAudio.
 #set $refresh_i3status killall -SIGUSR1 i3status
@@ -79,7 +82,7 @@ bindsym $mod+Shift+w exec qutebrowser
 bindsym $mod+w exec firefox
 
 # file manager
-bindsym $mod+e exec pcmanfm
+bindsym $mod+e exec thunar
 
 # start a terminal
 bindsym $mod+Return exec xfce4-terminal
@@ -87,12 +90,6 @@ bindsym $mod+Return exec xfce4-terminal
 # pulseaudio
 bindsym $mod+a exec pavucontrol
 for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
-
-# galculator
-bindsym $mod+m exec galculator
-for_window [class="Galculator" instance="galculator"] floating enable
-
-# kill focused window
 bindsym $mod+q kill
 
 # kill targeted x window with mouse
@@ -106,11 +103,11 @@ bindsym $mod+Shift+d exec "dmenu_run -nf '#BBBBBB' -nb '#222222' -sb '#83A598' -
 # A more modern dmenu replacement is rofi:
 bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun -line-padding 4 \
                 -columns 2 -padding 50 -hide-scrollbar -terminal xfce4-terminal \
-                -show-icons -drun-icon-theme "elementary-icon-theme" -font "Droid Sans Regular 10"
+                -show-icons -drun-icon-theme "Cloudy-Solid-Grey-Dark" -font "Droid Sans Regular 10"
 # rofi show open window
 bindsym $mod+x exec --no-startup-id rofi -modi drun -show window -line-padding 4 \
                 -columns 2 -padding 50 -hide-scrollbar -terminal xfce4-terminal \
-                -show-icons -drun-icon-theme "elementary-icon-theme" -font "Droid Sans Regular 10" 
+                -show-icons -drun-icon-theme "Cloudy-Solid-Grey-Dark" -font "Droid Sans Regular 10"
 
 # change focus
 bindsym $mod+h focus left
@@ -231,34 +228,36 @@ mode "resize" {
         bindsym $mod+r mode "default"} 
        
 }
+
+
 bindsym $mod+r mode "resize"
-#class                  border  bground text    indicator child_border
-client.focused          #D9D9D9 #D9D9D9 #000000 #AAAAAA   #000000
-client.focused_inactive #D9D9D9 #AAAAAA #000000 #484E50   #5F676A
-client.unfocused        #D9D9D9 #898989 #FFFFFF #292D2E   #222222
-client.urgent           #D9D9D9 #63639C #FFFFFF #000000   #000000
-client.placeholder      #D9D9D9 #AAAAAA #000000 #000000   #0C0C0C
-
-client.background       #FFFFFF
-
 # toggle show/hide for ibar
 # bindsym $mod+n bar mode toggle
 # change "modifer" in bar to "none" if the above is enabled
+
+# class                 border  bground text    indicator child_border
+client.focused          #F4F4F4 #262525 #FFFFFF #FFFFFF   #FFFFFF
+client.focused_inactive #000000 #5F676A #FFFFFF #484E50   #5F676A
+client.unfocused        #333333 #222222 #888888 #292D2E   #222222
+client.urgent           #2F343A #900000 #FFFFFF #900000   #900000
+client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
+
+client.background       #FFFFFF
 
 bar {
      position top
      mode hide
      modifier mod4
      status_command i3status
-  colors {
-        background #D9D9D9
-        statusline #000000
-        separator  #8c6d94
+   colors {
+    background #000000
+    statusline #E7E7EC
+    separator  #EBEBF0
 
-        focused_workspace  #D9D9D9 #722222 #FFFFFF
-        active_workspace   #D9D9D9 #A9A9A9 #000000
-        inactive_workspace #D9D9D9 #B3B3B3 #010101
-        urgent_workspace   #2F343A #63639C #FFFFFF
-        binding_mode       #2F343A #749E9E #FFFFFF
+    focused_workspace  #CBCBD0 #CBCBD0 #000000
+    active_workspace   #000000 #222222 #EBEBF0
+    inactive_workspace #333333 #222222 #888888
+    urgent_workspace   #2F343A #FF453A #000000
+    binding_mode       #2F343A #FF9F0B #000000
   }
 }

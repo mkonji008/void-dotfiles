@@ -1,11 +1,11 @@
 [Configuration]
-FontName=FiraCode Nerd Font Semi-Bold 11
+FontName=JetBrainsMono Nerd Font Mono Bold 12
 MiscAlwaysShowTabs=FALSE
-MiscBell=TRUE
+MiscBell=FALSE
 MiscBellUrgent=FALSE
-MiscBordersDefault=TRUE
-MiscCursorBlinks=TRUE
-MiscCursorShape=TERMINAL_CURSOR_SHAPE_UNDERLINE
+MiscBordersDefault=FALSE
+MiscCursorBlinks=FALSE
+MiscCursorShape=TERMINAL_CURSOR_SHAPE_BLOCK
 MiscDefaultGeometry=80x24
 MiscInheritGeometry=FALSE
 MiscMenubarDefault=FALSE
@@ -27,14 +27,13 @@ MiscSlimTabs=FALSE
 MiscNewTabAdjacent=FALSE
 MiscSearchDialogOpacity=100
 MiscShowUnsafePasteDialog=TRUE
-FontAllowBold=FALSE
 MiscRightClickAction=TERMINAL_RIGHT_CLICK_ACTION_CONTEXT_MENU
-BackgroundDarkness=0.860000
-BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
-ColorCursor=#FAFAFA
-ColorCursorUseDefault=FALSE
-ColorPalette=rgb(155,22,22);rgb(177,177,177);rgb(162,162,162);rgb(250,250,250);rgb(130,130,130);rgb(250,250,250);rgb(146,146,146);rgb(177,176,176);rgb(102,10,10);rgb(250,250,250);rgb(186,186,186);rgb(182,180,180);rgb(250,250,250);rgb(160,160,160);rgb(250,250,250);rgb(183,181,181)
-ColorForeground=#FAFAFA
+BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
+BackgroundDarkness=0.850000
+ColorForeground=#ffffffffffff
 ColorBackground=#000000000000
+ColorCursor=#EBDBB2
+ColorCursorUseDefault=FALSE
+ColorPalette=#282828;#CC241D;#98971A;#D79921;#458588;#B16286;#689D6A;#A89984;#928374;#FB4934;#B8BB26;#FABD2F;#83A598;#D3869B;#8EC07C;#EBDBB2
 
