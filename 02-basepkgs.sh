@@ -16,7 +16,6 @@ else
 	echo "Exiting..."
 	exit 1
 fi
-doas xbps-remove -y sudo
 
 #install packages
 if [ ! -f packages.txt ]; then
@@ -25,7 +24,7 @@ if [ ! -f packages.txt ]; then
 fi
 
 while read -r package; do
-	doas xbps-install -Suy "$package"
+	sudo xbps-install -Suy "$package"
 done <packages.txt
 
 # install oh-my-bash and wait, will resume when completed
@@ -56,19 +55,19 @@ dest_dirs=(
 
 # Create destination directories if they don't exist
 for dir in "${dest_dirs[@]}"; do
-	doas mkdir -p "$dir"
+	sudo mkdir -p "$dir"
 done
 
 # Copy files and directories with no-clobber option (-n)
-doas cp -r "$src_dir/config/i3/" "/home/$username/.config/i3/"
-doas cp -r "$src_dir/config/i3status/" "/home/$username/.config/i3status/"
-doas cp -r "$src_dir/config/nvim/" "/home/$username/.config/nvim/"
-doas cp -r "$src_dir/config/copyq/" "/home/$username/.config/copyq/"
-doas cp -r "$src_dir/config/ranger/" "/home/$username/.config/ranger/"
-doas cp -r "$src_dir/config/xfce4/" "/home/$username/.config/xfce4/"
-doas cp -r "$src_dir/dotlocal/share/" "/home/$username/.local/share/"
-doas cp -r "$src_dir/wallpaper/" "/home/$username/Pictures/wallpaper/"
-doas cp -r "$src_dir/themes/" "/usr/share/themes/"
-doas cp -r "$src_dir/icons/" "/usr/share/icons/"
+sudo cp -r "$src_dir/config/i3/" "/home/$username/.config/i3/"
+sudo cp -r "$src_dir/config/i3status/" "/home/$username/.config/i3status/"
+sudo cp -r "$src_dir/config/nvim/" "/home/$username/.config/nvim/"
+sudo cp -r "$src_dir/config/copyq/" "/home/$username/.config/copyq/"
+sudo cp -r "$src_dir/config/ranger/" "/home/$username/.config/ranger/"
+sudo cp -r "$src_dir/config/xfce4/" "/home/$username/.config/xfce4/"
+sudo cp -r "$src_dir/dotlocal/share/" "/home/$username/.local/share/"
+sudo cp -r "$src_dir/wallpaper/" "/home/$username/Pictures/wallpaper/"
+sudo cp -r "$src_dir/themes/" "/usr/share/themes/"
+sudo cp -r "$src_dir/icons/" "/usr/share/icons/"
 
 echo "Files and directories copied successfully."

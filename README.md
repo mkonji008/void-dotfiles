@@ -26,7 +26,7 @@ Run the scripts in order, make them executable first with
 1. ``sudo ./01-doas.sh``
    - Enter your username when prompted, this will install opendoas and configure it
    - If for some reason you make an error typing the username, do ``sudo rm -rf /etc/doas.conf`` and rerun 01-doas.sh
-2. ``doas ./02-basepkgs.sh``
+2. ``sudo ./02-basepkgs.sh``
    - This installs i3 and all my packages that are part of xbps. You can mmodify what packages get installed in **packages.txt** file
    - This removes **sudo** so run with **doas**
 3. ``doas ./03-services.sh``
