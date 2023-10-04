@@ -59,14 +59,14 @@ for dir in "${dest_dirs[@]}"; do
 done
 
 # Copy files and directories with no-clobber option (-n)
-sudo cp -r "$src_dir/config/i3" "/home/$username/.config/i3"
-sudo cp -r "$src_dir/config/i3status" "/home/$username/.config/i3status"
-sudo cp -r "$src_dir/config/nvim" "/home/$username/.config/nvim"
-sudo cp -r "$src_dir/config/copyq" "/home/$username/.config/copyq"
-sudo cp -r "$src_dir/config/ranger" "/home/$username/.config/ranger"
-sudo cp -r "$src_dir/config/xfce4" "/home/$username/.config/xfce4"
-sudo cp -r "$src_dir/dotlocal/share" "/home/$username/.local/share"
-sudo cp -r "$src_dir/wallpaper" "/home/$username/Pictures/wallpaper"
+sudo cp -r "$src_dir/config/i3" "/home/$username/.config"
+sudo cp -r "$src_dir/config/i3status" "/home/$username/.config"
+sudo cp -r "$src_dir/config/nvim" "/home/$username/.config"
+sudo cp -r "$src_dir/config/copyq" "/home/$username/.config"
+sudo cp -r "$src_dir/config/ranger" "/home/$username/.config"
+sudo cp -r "$src_dir/config/xfce4" "/home/$username/.config"
+sudo cp -r "$src_dir/dotlocal/share" "/home/$username/.local"
+sudo cp -r "$src_dir/wallpaper" "/home/$username/Pictures"
 sudo cp -r "$src_dir/themes" "/usr/share/themes"
 sudo cp -r "$src_dir/icons" "/usr/share/icons"
 
