@@ -65,4 +65,7 @@ sudo cp -r "$src_dir/wallpaper" "/home/$username/Pictures"
 sudo cp -r "$src_dir/themes" "/usr/share/themes"
 sudo cp -r "$src_dir/icons" "/usr/share/icons"
 sudo cp -r "$src_dir/.bashrc" "/home/$username/.bashrc"
+
+sudo chown -R $username:$username /home/$username
+
 echo "Files and directories copied successfully."
