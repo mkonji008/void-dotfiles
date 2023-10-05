@@ -40,6 +40,7 @@ nitrogen
 polkit
 mate-polkit
 rofi
+picom
 lxappearance
 flameshot
 CopyQ

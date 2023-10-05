@@ -27,11 +27,6 @@ while read -r package; do
 	sudo xbps-install -Suy "$package"
 done <packages.txt
 
-# install oh-my-bash and wait, will resume when completed
-(bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)") &
-
-wait
-
 src_dir="/home/$username/code/void-dotfiles"
 
 # Define the destination directories
@@ -69,5 +64,5 @@ sudo cp -r "$src_dir/dotlocal/share" "/home/$username/.local"
 sudo cp -r "$src_dir/wallpaper" "/home/$username/Pictures"
 sudo cp -r "$src_dir/themes" "/usr/share/themes"
 sudo cp -r "$src_dir/icons" "/usr/share/icons"
-
+sudo cp -r "$src_dir/.bashrc" "/home/$username/.bashrc"
 echo "Files and directories copied successfully."
