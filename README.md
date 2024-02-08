@@ -1,7 +1,8 @@
-## My bare metal and devbox config w/i3
+# My bare metal and devbox config w/i3
 
-My personal config for my box and devbox. 
+My personal config for my box and devbox.
 
+## Details 
 I used to keep a script updated in a private repo but packages would change over time requiring something minor changed more freqently than I'd like. Rather than attempt to keep that script updated and have to deploy a new vm each time I wanted to test, I found it easier to keep a set of commands and scripts and change them incrementally as needed. This also helps me not to have to fumble around looking at several repos or sites when running into the same issue over and over each new install and just include those hotfixes here. There are still some ansible vault configs living in that private repo and I'll eventually move them over.
 
 **Initial setup**
